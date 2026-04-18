@@ -1,1 +1,413 @@
-/* code here */
+/* RESET & VARIABLES */
+:root {
+  --primary: #F13E93; /* Warna utama (Pink Kuat) */
+  --primary-hover: #d82b7d;
+  --bg-color: #ffffff; /* Latar belakang utama putih */
+  --bg-hero: #FAFFCB; /* Kuning pucat untuk area Hero */
+  --surface: #ffffff;
+  --surface-border: #F9D0CD; /* Pink pucat untuk garis tepi */
+  --text-main: #1f2937; /* Teks utama gelap untuk keterbacaan */
+  --text-muted: #4b5563; /* Teks abu-abu */
+  --font-family: 'Inter', sans-serif;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3 {
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* BUTTONS */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: 1px solid var(--primary);
+  box-shadow: 0 4px 14px rgba(241, 62, 147, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(241, 62, 147, 0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(241, 62, 147, 0.1);
+  transform: translateY(-2px);
+}
+
+/* HEADER & NAVBAR */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--primary); /* Menggunakan warna pink di header */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 16px 0;
+  transition: var(--transition);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff; /* Logo putih supaya kontras dengan pink */
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: #F9D0CD; /* Link menggunakan pink muda sesuai permintaan */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background: #ffffff;
+  color: var(--primary);
+  border: none;
+}
+
+.nav-btn:hover {
+  background: #F9D0CD;
+  color: var(--primary);
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  background-color: var(--bg-hero); /* Latar belakang hero kuning pucat */
+  background-image: radial-gradient(circle at top, rgba(255,255,255,0.8), transparent 60%);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  color: var(--primary); /* Teks utama pink */
+}
+
+.hero p {
+  font-size: 20px;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* SECTION GLOBAL */
+section {
+  padding: 100px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.section-header .subtitle {
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+/* ABOUT SECTION */
+.about {
+  background-color: #ffffff;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  color: var(--text-muted);
+  background: var(--surface);
+  padding: 50px;
+  border-radius: 24px;
+  border: 2px solid var(--surface-border); /* Tepi kotak menggunakan light pink */
+  box-shadow: 0 10px 30px rgba(249, 208, 205, 0.3);
+}
+
+/* FEATURES SECTION */
+.features {
+  background-color: #fdfdfd;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.feature-card {
+  background: var(--surface);
+  border: 2px solid var(--surface-border);
+  padding: 40px 32px;
+  border-radius: 24px;
+  transition: var(--transition);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 30px rgba(249, 208, 205, 0.5);
+}
+
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.feature-card h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+/* FORMS & AUTH / CONTACT SECTIONS */
+.auth-section {
+  background-color: #fdfdfd;
+}
+
+.contact-section {
+  background-color: #ffffff;
+}
+
+.auth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.auth-card {
+  background: var(--surface);
+  border: 2px solid var(--surface-border);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(249, 208, 205, 0.3);
+}
+
+.auth-card h3 {
+  margin-bottom: 24px;
+  text-align: center;
+  color: var(--primary);
+  font-size: 28px;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 2px solid var(--surface-border);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(249, 208, 205, 0.3);
+}
+
+.custom-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.custom-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.custom-form input,
+.custom-form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.custom-form input:focus,
+.custom-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(241, 62, 147, 0.2);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--primary);
+  padding: 40px 0;
+  text-align: center;
+  color: #F9D0CD;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (HP, Tablet, Desktop)
+   ========================================================================== */
+
+/* Tablet & HP Besar (Maksimal 768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 0;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .nav-links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-btn {
+    display: none; /* Sembunyikan tombol "Contact Us" di header saat layar kecil agar rapi */
+  }
+  
+  .hero {
+    padding-top: 120px; /* Jarak untuk navbar yang jadi lebih tinggi */
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    padding: 0 16px;
+  }
+  
+  .about-content {
+    padding: 30px 20px;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+}
+
+/* HP Layar Kecil (Maksimal 480px) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .hero-actions a {
+    width: 100%;
+  }
+
+  .feature-card {
+    padding: 30px 20px;
+  }
+}

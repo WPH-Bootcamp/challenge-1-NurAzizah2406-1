@@ -13,9 +13,9 @@ Kalian akan membuat satu halaman landing page sederhana. Tidak perlu kompleks, y
 
 ## Checklist yang Harus Diselesaikan
 
-1. HTML semantic yang lengkap dan sesuai konteks isinya.
-2. CSS untuk layout dasar dan typography yang konsisten.
-3. Push ke GitHub dengan minimal 3 commit yang pesannya jelas dan bermakna.
+- [x] HTML semantic yang lengkap dan sesuai konteks isinya.
+- [x] CSS untuk layout dasar dan typography yang konsisten.
+- [ ] Push ke GitHub dengan minimal 3 commit yang pesannya jelas dan bermakna.
 
 ## Arahan dari Saya
 

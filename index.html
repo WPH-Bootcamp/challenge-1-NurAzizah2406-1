@@ -3,10 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge-1 Simple Landing Page with Html and CSS</title>
+    <meta name="description" content="Start learning web development with simple steps. Join our community and practice with real-world cases.">
+    <title>Challenge 1 - Simple Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!-- Code Here -->
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="header">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#" class="logo">MyBrand.</a>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#auth">Join Us</a></li>
+      </ul>
+      <a href="#contact" class="btn-primary nav-btn">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+      <div class="container hero-content">
+        <h1>Build Your Future Today</h1>
+        <p>Start learning web development with simple steps. We guide you from zero to a professional developer.</p>
+        <div class="hero-actions">
+          <a href="#auth" class="btn-primary">Get Started</a>
+          <a href="#features" class="btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Us</h2>
+          <p class="subtitle">Who we are and what we do</p>
+        </div>
+        <div class="about-content">
+          <p>We are a passionate team dedicated to helping beginners become developers step by step. Our curriculum is designed to be accessible, engaging, and highly practical. Whether you are starting from scratch or looking to upskill, we have the resources you need.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Features</h2>
+          <p class="subtitle">Why choose our platform</p>
+        </div>
+        
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>Easy Learning</h3>
+            <p>Simple and beginner-friendly material structured to help you grasp complex concepts quickly.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">💻</div>
+            <h3>Real Projects</h3>
+            <p>Practice with real-world cases that you can showcase in your professional portfolio.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>Community</h3>
+            <p>Join thousands of other learners, share knowledge, ask questions, and grow together.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTH SECTION (LOGIN & REGISTER) -->
+    <section id="auth" class="auth-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Join Us Today</h2>
+          <p class="subtitle">Login or create a new account</p>
+        </div>
+        <div class="auth-grid">
+          <!-- LOGIN FORM -->
+          <div class="auth-card">
+            <h3>Login</h3>
+            <form action="#" class="custom-form">
+              <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+              </div>
+              <button type="submit" class="btn-primary w-100">Login</button>
+            </form>
+          </div>
+
+          <!-- REGISTER FORM -->
+          <div class="auth-card">
+            <h3>Register</h3>
+            <form action="#" class="custom-form">
+              <div class="form-group">
+                <label for="reg-name">Full Name</label>
+                <input type="text" id="reg-name" placeholder="Enter your name" required>
+              </div>
+              <div class="form-group">
+                <label for="reg-email">Email</label>
+                <input type="email" id="reg-email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="reg-password">Password</label>
+                <input type="password" id="reg-password" placeholder="Create a password" required>
+              </div>
+              <button type="submit" class="btn-primary w-100">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p class="subtitle">We'd love to hear from you</p>
+        </div>
+        <div class="contact-content">
+          <form action="#" class="custom-form contact-form">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" rows="5" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 MyBrand. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
